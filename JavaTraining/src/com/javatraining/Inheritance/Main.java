@@ -10,6 +10,7 @@ package com.javatraining.Inheritance;
 			
 		}
 		Car car = new Audi();
+		
 		//Audi a ;
 		//a = (Audi)c;
 		

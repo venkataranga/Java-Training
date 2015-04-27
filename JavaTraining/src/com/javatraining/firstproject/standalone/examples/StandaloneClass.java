@@ -1,9 +1,13 @@
 package com.javatraining.firstproject.standalone.examples;
 
-public class StandaloneClass {
+import com.javatraining.Inheritance.Car;
+
+public class StandaloneClass extends Car {
 
 	public static void main(String[] args) {
 		
+		Car c = new Car();
+		c.applyBreak();
 		int a; 
 		
 		a = 10;
