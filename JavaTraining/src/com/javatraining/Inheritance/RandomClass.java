@@ -8,4 +8,10 @@ public class RandomClass implements Navigatable {
 
 	}
 
+	@Override
+	public void findPOI() {
+		// TODO Auto-generated method stub
+		
+	}
+
 }
