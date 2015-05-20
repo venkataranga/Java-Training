@@ -2,12 +2,21 @@ package com.javatraining.collections;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 public class ArrarListExample {
 
 	public static void main(String[] args) {
 
+		List genricList = new ArrayList();
+		genricList.add("string");
+		genricList.add(new Person("something", 1, "M"));
+		genricList.add(new ArrarListExample());
+		
 		List<String> strings = new ArrayList<String>();
 		strings.add("x");
 		strings.add("d");
@@ -16,6 +25,7 @@ public class ArrarListExample {
 		strings.add("harsha");
 		strings.add("harsha1");
 		strings.add("venkat");
+		//strings.add(new Person());
 
 		System.out.println(strings.get(0));
 
@@ -42,7 +52,12 @@ public class ArrarListExample {
 		System.out.println("Sorted by name using comparator: " + personsList);
 
 		Animal[] animalArray = new Animal[2];
+		animalArray[0] = new Cat();
+		animalArray[1] = new Dog();
+		
 		animalArray = new Dog[2];
+		
+		
 		/*
 		 * animalArray[0] = new Cat(); animalArray[1] = new Dog();
 		 */
@@ -60,7 +75,26 @@ public class ArrarListExample {
 		animalList.add(new Dog());
 		animalList.add(new Cat());
 
-		animalsSpeak(animalArray);
+	
+		//animalsSpeak(animalArray);
+		
+		Set<String> set = new HashSet<String>();
+		set.add("one");
+		set.add("two");
+		
+		for(String s : set){
+			System.out.println(s);
+		}
+		
+		Map<String, Person> animalsMap = new HashMap<String, Person>();
+		animalsMap.put("harsha", null);
+		animalsMap.put("venkat", null);
+		animalsMap.put(null, null);
+		animalsMap.put(null, new Person("",1,""));
+		System.out.println("animals map: "+animalsMap.get(null));
+		for(String name : animalsMap.keySet()){
+			animalsMap.get(name);
+		}
 
 	}
 
