@@ -3,6 +3,7 @@ package com.javatraining.jdbc;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.sql.Statement;
 
@@ -44,6 +45,11 @@ public class ReadFromStudentClass {
 			Statement statement = connection.createStatement();
 
 			result = statement.executeQuery(sqlQuery);
+			ResultSetMetaData  data = result.getMetaData();
+			System.out.println("FROM METADATA: "+data.getColumnCount());
+			System.out.println("FROM METADATA: "+data.getColumnName(1));
+			
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
