@@ -32,16 +32,15 @@ public class ReadFromStudentClass {
 
 	public static ResultSet getResult(String sqlQuery) {
 
-		Connection connection = null;
+		//Connection connection = null;
 		ResultSet result = null;
-		try {
+		try(Connection connection = DriverManager.getConnection(
+				"jdbc:mysql://localhost:3306/JDBCTraining", "root",
+				"dinesh")) {
 
 			// Class.forName("com.mysql.jdbc.Driver");
 
-			connection = DriverManager.getConnection(
-					"jdbc:mysql://localhost:3306/JDBCTraining", "root",
-					"dinesh");
-
+			
 			Statement statement = connection.createStatement();
 
 			result = statement.executeQuery(sqlQuery);
