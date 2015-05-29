@@ -2,13 +2,42 @@
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
   <display-name>J2EEFirstExample</display-name>
   <servlet>
-  	<servlet-name>Welcome</servlet-name>
+ 	<servlet-name>Welcome</servlet-name>
   	<servlet-class>com.javatraining.servlets.HelloServlet</servlet-class>
+  	<init-param>
+  		<param-name>database</param-name>
+  		<param-value>Oracle</param-value>
+  	</init-param>
+  	<init-param>
+  		<param-name>name</param-name>
+  		<param-value>hello</param-value>
+  	</init-param>
+  	<load-on-startup>1</load-on-startup>
   </servlet>
+  <context-param>
+  	<param-name>context</param-name>
+  	<param-value>This is a sample Context value</param-value>
+  </context-param>
+  
+   <servlet>
+ 	<servlet-name>Welcome2</servlet-name>
+  	<servlet-class>com.javatraining.servlets.HelloServlet</servlet-class>
+  	<init-param>
+  		<param-name></param-name>
+  		<param-value></param-value>
+  	</init-param>
+  	<load-on-startup>2</load-on-startup>
+   </servlet>
+ 
+  <servlet-mapping>
+  	<servlet-name>Welcome</servlet-name>
+  	<url-pattern>/welcome2</url-pattern>
+  </servlet-mapping> 
+  
   
   
   <servlet-mapping>
   	<servlet-name>Welcome</servlet-name>
   	<url-pattern>/welcome</url-pattern>
-  </servlet-mapping>
+  </servlet-mapping> 
 </web-app>
