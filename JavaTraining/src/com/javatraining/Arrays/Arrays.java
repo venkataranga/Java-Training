@@ -1,10 +1,11 @@
 package com.javatraining.Arrays;
 
+import javax.swing.text.html.HTML;
+
 public class Arrays {
 
 	public static void main(String[] args) {
-		
-		
+	
 		//local variable are declared inside a method and should be initialized before use. null is a proper value that can be assigned to local variables 
 		Car c = null;
 		System.out.println(c);
