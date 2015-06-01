@@ -9,4 +9,13 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
+  
+  
+  <jsp-config>
+  	<jsp-property-group>
+  		<url-pattern>/r*.jsp</url-pattern>
+  		<trim-directive-whitespaces>true</trim-directive-whitespaces>
+  	</jsp-property-group>
+  	
+  </jsp-config>
 </web-app>

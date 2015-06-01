@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
+<%@ page language="java" contentType="text/html"
     pageEncoding="UTF-8" import=" com.javatrainig.j2ee.jsp.pojo.User"%>
     
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -16,6 +16,8 @@
 		else
 			out.println("Hello "+ user.getFirstName()+" "+user.getLastName()+", you have successfully registered ");
 	
-	%> 
+	%><%
+	
+	%>
 </body>
 </html>

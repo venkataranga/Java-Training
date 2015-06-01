@@ -8,14 +8,16 @@
 </head>
 <body>
 	<center>
+	<%! final String PII = "3.14" ;%>
 	<%
 		if(request.getAttribute("validationErrors")!=null && (Boolean)request.getAttribute("validationErrors")){
 			out.println("<i style=\"color: red\">Please enter proper values<i>");
 		}else if(request.getAttribute("userExists")!=null && (Boolean)request.getAttribute("userNotExists")){
 			out.println("<i style=\"color: red\">User ID taken<i>");
 		}
-			
+		
 	%>
+	<%= PII %>
 		<form action="register" method="post">
 			First Name: <input type="text" name="firstname"><br/>
 			Last Name: <input type="text" name="lastname"><br/>
