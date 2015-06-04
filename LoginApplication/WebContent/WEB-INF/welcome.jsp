@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html"
     pageEncoding="UTF-8" import=" com.javatrainig.j2ee.jsp.pojo.User"%>
-    
+ <%@ include file="/WEB-INF/logout.jsp" %>   
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -16,8 +16,10 @@
 		else
 			out.println("Hello "+ user.getFirstName()+" "+user.getLastName()+", you have successfully registered ");
 	
-	%><%
-	
 	%>
+	
+	<br/><a href="viewAccounts">View Accounts</a> <br/>
+	<a href="addAccount">Add Accounts</a>
+	
 </body>
 </html>

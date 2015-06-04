@@ -91,6 +91,8 @@ public class RegistrationServlet extends HttpServlet {
 		}
 		request.setAttribute("from", "registrationServlet");
 		request.setAttribute("user", user);
+		request.getSession().setAttribute("accounts", user.getAccounts());
+		request.getSession().setAttribute("user", user);
 		request.getRequestDispatcher("/WEB-INF/welcome.jsp").forward(request, response);
 	}
 

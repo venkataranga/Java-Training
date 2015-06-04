@@ -1,11 +1,14 @@
 package com.javatrainig.j2ee.jsp.servlets;
 
 import java.io.IOException;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import com.javatrainig.j2ee.jsp.pojo.User;
 
 /**
  * Servlet implementation class LoginServlet
@@ -37,8 +40,12 @@ public class LoginServlet extends HttpServlet {
 			request.getRequestDispatcher("/WEB-INF/login.jsp").forward(request, response);
 			return;
 		}
+		request.changeSessionId();
+		User user = RegistrationServlet.database.get(username);
+		request.getSession().setAttribute("accounts", user.getAccounts());
+		request.getSession().setAttribute("user", user);
 		request.setAttribute("from", "loginServlet");
-		request.setAttribute("user", RegistrationServlet.database.get(username));
+		request.setAttribute("user", user);
 		request.getRequestDispatcher("/WEB-INF/welcome.jsp").forward(request, response);
 	}
 
