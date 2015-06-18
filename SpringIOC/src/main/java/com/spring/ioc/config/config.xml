@@ -2,10 +2,12 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:p="http://www.springframework.org/schema/p"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd" 
+	>
 
-
-	<bean name="user" class="com.spring.ioc.pojo.User">
+	<description>sajhdgh</description>
+	
+	<bean name="user" class="com.spring.ioc.pojo.User" >
 		<property name="firstName" value="17981729"/>
 		<property name="lastName">
 			<value>das</value>
@@ -20,12 +22,12 @@
 		<property name="billingAddress">
 			<ref bean="billingAddress"/>
 		</property>
-		<property name="accounts">
+		<!-- <property name="accounts">
 			<set>
 				<ref bean="acc1"/>
 				<ref bean="acc2"/>
 			</set>	
-		</property>
+		</property> -->
 		<property name="map">
 			<map>
 				<entry key="dsads " value="dasds"/>
@@ -53,7 +55,7 @@
 		</property>
 	</bean>
 	
-	<bean name="billingAddress" class ="com.spring.ioc.pojo.Address">
+	<bean name="billingAddress" class ="com.spring.ioc.pojo.Address" >
 		<property name="houseNumber">
 			<value>123</value>
 		</property>
@@ -70,7 +72,7 @@
 			<value>75000</value>
 		</property>
 	</bean>
-	<bean name="acc3" class="com.spring.ioc.pojo.Account" p:bankName="wellsforgo" p:accountType="checing" p:routingNumber="3862318" p:accountNumber="301398021"/>
+	<!-- <bean name="acc3" class="com.spring.ioc.pojo.Account" p:bankName="wellsforgo" p:accountType="checing" p:routingNumber="3862318" p:accountNumber="301398021"/>
 	<bean name="acc1" class="com.spring.ioc.pojo.Account">
 		<property name="bankName" value="chase"/>
 		<property name="accountType" value="checking"/>
@@ -84,30 +86,50 @@
 		<property name="accountType" value="checking"/>
 		<property name="accountNumber" value="5464564"/>
 		<property name="routingNumber" value="23432"/>
-	</bean>
+	</bean >-->
 	
 	<bean name="userUsingGetInstanceFactoryMethod" class="com.spring.ioc.pojo.User" factory-method="getInstance"/>
 	
-	<bean name="person" class="com.spring.ioc.pojo.Person" factory-method="dskjhask">
+	<bean name="p" class="com.spring.ioc.pojo.Person" factory-method="dskjhask" >
 		<constructor-arg name="sex"  value="F"/>
 	</bean>
 	
-	
-	
-	
-	
-	<bean name="car" class="com.spring.ioc.pojo.Car">
-		<constructor-arg name="make" value="BMW"/>
-		<constructor-arg  name="model" value="X5"/>
-		<constructor-arg name="p" ref="person"/>
+	<bean name="p1" class="com.spring.ioc.pojo.Person" factory-method="dskjhask" primary="true">
+		<constructor-arg name="sex"  value="M"/>
 	</bean>
 	
 	
 	
+	<bean name="car" class="com.spring.ioc.pojo.Car" autowire="byType">
+		<property name="make" value="4298738e"/>
+		<property name="model" value="djask"/>
+	</bean>
+	
+	
+	<bean name="commonProperties" class="com.spring.ioc.pojo.ClassA"  init-method="initMethod" destroy-method="destroyMethod">
+		<property name="commonPropertyA" value="ddakljs"/>
+		<property name="commonPropertyB" value="das"/>
+		<property name="commonPropertyC" value="da"/>
+	</bean>
+	
+	
+<!-- 	<bean name="classA" class="com.spring.ioc.pojo.ClassA" parent="commonProperties"/> -->
+	<bean name="classB" class="com.spring.ioc.pojo.ClassB"/>
 	
 	
 	
+	<bean name="accountUsingConstructorInjection" class="com.spring.ioc.pojo.Account" scope="prototype">
+<!-- 		<constructor-arg name="" value="TD Bank"/> -->
+<!-- 		<constructor-arg value="3197831"/> -->
+		<constructor-arg index="1" value="127891"/>
+		<constructor-arg index="0"  value="savings"/>
+	</bean>
 	
-	
+	<bean name="accountUsingConstructorInjection1" class="com.spring.ioc.pojo.Account" depends-on="">
+		<constructor-arg name="" value="TD Bank"/>
+		<constructor-arg value="3197831"/>
+		<constructor-arg index="1" value="127891"/>
+		<constructor-arg index="0"  value="savings"/>
+	</bean>
 	
 </beans>

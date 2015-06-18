@@ -21,13 +21,24 @@ public class Standalone {
 		System.out.println(ctx.getBean("userUsingGetInstanceFactoryMethod"));
 		
 		//Person p = Person.getInstance("M");
-		System.out.println(ctx.getBean("person").getClass().getName());
-		System.out.println(getInstance("com.spring.ioc.pojo.Male"));
-		System.out.println(getInstance("com.spring.ioc.pojo.Femlae"));
-		System.out.println(getInstance("com.spring.ioc.pojo.User"));
-		System.out.println("____________________________");
-		System.err.println(ctx.getBean("car"));
+//		System.out.println(ctx.getBean("person").getClass().getName());
+//		System.out.println(getInstance("com.spring.ioc.pojo.Male"));
+//		System.out.println(getInstance("com.spring.ioc.pojo.Femlae"));
+//		System.out.println(getInstance("com.spring.ioc.pojo.User"));
+//		System.out.println("____________________________");
+//		System.err.println(ctx.getBean("car"));
+		
+		System.out.println(ctx.getBean("commonProperties"));
+		System.out.println(ctx.getBean("classB"));
+	
+		Account a1 = (Account) ctx.getBean("accountUsingConstructorInjection");
+		Account a2 = (Account) ctx.getBean("accountUsingConstructorInjection");
+		System.out.println(ctx.getBean("accountUsingConstructorInjection"));
+		System.out.println("a1==a2: "+(a1==a2));
+		
+		System.out.println(ctx.getBean("car"));
 	}
+	
 	
 	public static Object getInstance(String className){
 		Object o = null;

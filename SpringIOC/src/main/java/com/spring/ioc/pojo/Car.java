@@ -12,7 +12,9 @@ public class Car {
 		return "Car [make=" + make + ", model=" + model + ", p=" + p + "]";
 	}
 
-
+	public Car(){
+		
+	}
 	public Car(String make, String model, Person p) {
 		super();
 		this.make = make;
