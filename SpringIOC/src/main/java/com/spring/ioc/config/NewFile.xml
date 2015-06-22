@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tns:Person xmlns:tns="http://www.example.org/NewXMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.example.org/NewXMLSchema NewXMLSchema.xsd ">
+  <tns:firstname>tns:firstname</tns:firstname>
+  <tns:lastname>tns:lastname</tns:lastname>
+  
+ 
+</tns:Person>
+<tns:name xmlns:tns="http://www.example.org/NewXMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.example.org/NewXMLSchema NewXMLSchema.xsd ">
+	<tns:firstName></tns:firstName>
+	<tns:lastName></tns:lastName>
+</tns:name>
