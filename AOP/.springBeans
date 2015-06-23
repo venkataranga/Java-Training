@@ -7,8 +7,7 @@
 	</configSuffixes>
 	<enableImports><![CDATA[false]]></enableImports>
 	<configs>
-		<config>src/main/java/com/spring/ioc/config/config.xml</config>
-		<config>src/main/java/com/spring/ioc/config/exmaple.xml</config>
+		<config>src/main/resources/beans.xml</config>
 	</configs>
 	<autoconfigs>
 	</autoconfigs>

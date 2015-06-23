@@ -15,6 +15,25 @@ public class User {
 	List<Account> accounts;
 	Map<String,String> map;
 	Person p;
+	
+	
+	public User(String firstName, String middleInitial, String lastName,
+			Address shippingAddress, Address billingAddress, String email,
+			String phoneNumber, List<Account> accounts,
+			Map<String, String> map, Person p) {
+		super();
+		this.firstName = firstName;
+		this.middleInitial = middleInitial;
+		this.lastName = lastName;
+		this.shippingAddress = shippingAddress;
+		this.billingAddress = billingAddress;
+		this.email = email;
+		this.phoneNumber = phoneNumber;
+		this.accounts = accounts;
+		this.map = map;
+		this.p = p;
+	}
+
 	public Person getP() {
 		return p;
 	}
@@ -94,5 +113,11 @@ public class User {
 		System.out.println("Creating new user from getInstance method");
 		return new User();
 	}
-	
+	public static User getInstance(String firstname, String lastname){
+		System.out.println("Creating new user from getInstance method");
+		User u =  new User();
+		u.setFirstName(firstname);
+		u.setLastName(lastname);
+		return u;
+	}
 }

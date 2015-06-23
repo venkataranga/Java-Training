@@ -90,6 +90,11 @@
 	
 	<bean name="userUsingGetInstanceFactoryMethod" class="com.spring.ioc.pojo.User" factory-method="getInstance"/>
 	
+	<bean name="userUsingGetInstanceFactoryMethod1" class="com.spring.ioc.pojo.User" factory-method="getInstance">
+		<constructor-arg name="firstname" value ="name"/>
+		<constructor-arg name="lastname" value ="name"/>
+	</bean>
+	
 	<bean name="p" class="com.spring.ioc.pojo.Person" factory-method="dskjhask" >
 		<constructor-arg name="sex"  value="F"/>
 	</bean>
@@ -131,5 +136,11 @@
 		<constructor-arg index="1" value="127891"/>
 		<constructor-arg index="0"  value="savings"/>
 	</bean>
+	
+	<bean name="commonProperties1">
+		<property name="commonPropA" value="a"/>
+		<property name="commonPropB" value="b"/>
+	</bean>
+	
 	
 </beans>

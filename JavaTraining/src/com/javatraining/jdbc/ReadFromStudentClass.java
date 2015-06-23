@@ -8,6 +8,8 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 public class ReadFromStudentClass {
+	
+	DBOps dbOps ;
 
 	public static void main(String[] args) throws SQLException {
 
