@@ -13,9 +13,10 @@
   <session-config>
     <session-timeout>2</session-timeout>
     <cookie-config>
-      <http-only>true</http-only>
+     <http-only>true</http-only>
     </cookie-config>
-    <tracking-mode>COOKIE</tracking-mode>
+     
+    <tracking-mode>SSL</tracking-mode>
   </session-config>
   
   

@@ -19,10 +19,17 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class RegistrationServlet
  */
-@WebServlet(urlPatterns={"/register"})
 public class RegistrationServlet extends HttpServlet {
+
+	@Override
+	public void init() throws ServletException {
+		System.out.println("servlet loaded");
+	}
+	
+
+	
 	private static final long serialVersionUID = 1L;
-    
+   // LoginService loginservice;
 	public static Map<String, User> database = new HashMap<>();
 	public List<User> db = new Vector<>();
     /**
@@ -34,6 +41,8 @@ public class RegistrationServlet extends HttpServlet {
 
 	public void init(ServletConfig config) throws ServletException {
 		System.out.println("Servlet is initialized");
+		System.out.println(config.getInitParameter("initParam"));;
+		System.out.println(config.getServletContext().getInitParameter("contextParam"));
 	}
 
 	/**
@@ -47,6 +56,8 @@ public class RegistrationServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	
+		//request.getServletContext().getContext("intiParam");
 		System.out.println("RegistrationServlet.doGet()");
 		request.setAttribute("test", "testing forward method");
 		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/register.jsp");
@@ -57,7 +68,7 @@ public class RegistrationServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+		//serv.login()
 		String username,password,firstname,lastname;
 		username = request.getParameter("username");
 		password = request.getParameter("password");

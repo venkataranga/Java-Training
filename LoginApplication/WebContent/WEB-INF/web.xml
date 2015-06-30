@@ -19,4 +19,24 @@
     </cookie-config>
     <tracking-mode>COOKIE</tracking-mode>
   </session-config>
+  
+  <context-param>
+  	<param-name>contextParam</param-name>
+  	<param-value>contextPramValue</param-value>
+  </context-param>
+  
+  <servlet>
+  	<servlet-name>register</servlet-name>
+  	<servlet-class>com.javatrainig.j2ee.jsp.servlets.RegistrationServlet</servlet-class>
+  	<init-param>
+  		<param-name>initParam</param-name>
+  		<param-value>sample value</param-value>
+  	</init-param>
+  	<load-on-startup>1</load-on-startup>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>register</servlet-name>
+  	<url-pattern>/register</url-pattern>
+  </servlet-mapping>
 </web-app>

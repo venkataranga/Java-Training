@@ -14,6 +14,7 @@ public class Standalone {
 		
 		Standalone s = new Standalone();
 		ApplicationContext ctx = new ClassPathXmlApplicationContext("com/spring/ioc/config/config.xml");
+		ApplicationContext ctx1 = new ClassPathXmlApplicationContext("");
 		User u = (User)ctx.getBean("user");
 		System.out.println(u);
 		s.user = u;

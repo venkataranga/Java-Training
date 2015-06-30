@@ -32,9 +32,11 @@ public class HelloServlet extends HttpServlet {
 			throws ServletException, IOException {
 		System.out.println(this.getInitParameter("database"));
 		System.out.println(req.getServletContext().getInitParameter("context"));
+		
 		String welcomeUser = "Hello, "+req.getParameter("yourname");
 		resp.setContentType("text/html;UTF-8");
 		PrintWriter out = resp.getWriter();
+		out.println(req.getHeader("accept"));
 		out.println(welcomeUser+" Welcome to J2EE Training");
 		out.println("<form action=\"welcome\" method=\"POST\">");
 		out.print("Enter Your Name: <input type=\"text\" name=\"yourname\"><br/>");

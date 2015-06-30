@@ -1,7 +1,5 @@
 package com.javatrainig.j2ee.jsp.servlets;
 
-import com.javatrainig.j2ee.jsp.pojo.User;
-
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
@@ -9,12 +7,16 @@ import java.util.Map;
 import java.util.Vector;
 
 import javax.servlet.RequestDispatcher;
+import javax.servlet.Servlet;
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import com.javatrainig.j2ee.jsp.pojo.User;
 
 /**
  * Servlet implementation class RegistrationServlet
@@ -90,8 +92,10 @@ public class RegistrationServlet extends HttpServlet {
 			database.put(username, user);
 		}
 		request.setAttribute("from", "registrationServlet");
+		
 		request.setAttribute("user", user);
-		request.getSession().setAttribute("accounts", user.getAccounts());
+		HttpSession session = request.getSession();
+		session.setAttribute("accounts", user.getAccounts());
 		request.getSession().setAttribute("user", user);
 		request.getRequestDispatcher("/WEB-INF/welcome.jsp").forward(request, response);
 	}
