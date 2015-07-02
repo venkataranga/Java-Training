@@ -13,7 +13,7 @@ import javax.servlet.annotation.WebFilter;
 /**
  * Servlet Filter implementation class LoggingFilter
  */
-
+@WebFilter("/login")
 public class LoggingFilter implements Filter {
 
     /**

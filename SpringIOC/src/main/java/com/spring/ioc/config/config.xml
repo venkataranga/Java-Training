@@ -5,6 +5,8 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd" 
 	>
 
+
+	
 	<description>sajhdgh</description>
 	
 	<bean name="user" class="com.spring.ioc.pojo.User" >

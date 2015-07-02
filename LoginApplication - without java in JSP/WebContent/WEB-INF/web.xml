@@ -16,7 +16,7 @@
      <http-only>true</http-only>
     </cookie-config>
      
-    <tracking-mode>SSL</tracking-mode>
+    <tracking-mode>COOKIE</tracking-mode>
   </session-config>
   
   
@@ -27,7 +27,7 @@
   <filter-mapping>
   	<filter-name>LoggingFilter</filter-name>
   	<url-pattern>/*</url-pattern>
-<!--   	<dispatcher>REQUEST</dispatcher> -->
+	<dispatcher>REQUEST</dispatcher> 
   </filter-mapping>
   
   <filter>
