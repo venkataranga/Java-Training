@@ -1,7 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-    
-<%@ taglib prefix="c" uri="" %>    
+    pageEncoding="UTF-8" import="java.util.List"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -10,7 +8,9 @@
 </head>
 <body>
 
+	<%! String instanceVariable ="Hi"; %>
 	<%
+		
 		if(request.getAttribute("validationErrors")!=null && (Boolean)request.getAttribute("validationErrors")){
 			out.println("<i style=\"color: red\">Please enter proper values<i>");
 		}else if(request.getAttribute("userNotExists")!=null && (Boolean)request.getAttribute("userNotExists")){
@@ -18,9 +18,10 @@
 		}else if((Boolean)request.getAttribute("invalidCredentials")!=null && (Boolean)request.getAttribute("invalidCredentials")){
 			out.println("<i style=\"color: red\">Please enter valid credentials<i>");
 		}
+	 
 			
 	%>
-	
+	 Hi
 	
 	<center>
 		<form action="login" method="post">

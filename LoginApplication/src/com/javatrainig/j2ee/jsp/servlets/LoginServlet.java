@@ -16,7 +16,9 @@ import com.javatrainig.j2ee.jsp.pojo.User;
 @WebServlet("/login")
 public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
+	
+	public String someVar;
+	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.getRequestDispatcher("/WEB-INF/login.jsp").forward(request, response);
 	}

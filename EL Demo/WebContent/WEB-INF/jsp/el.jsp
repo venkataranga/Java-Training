@@ -11,7 +11,7 @@
 <title>Insert title here</title>
 </head>
 <%
-	pageContext.setAttribute("page", "pageContext attr");
+	pageContext.setAttribute("page", "List of Book");
 	session.setAttribute("session", "session attr");
 	request.setAttribute("request", "request attr");
 	application.setAttribute("application", "context attr");
@@ -32,8 +32,8 @@
 	____________________________________________________________________________________________________________________<br>
 	<h4>String literals and variable assignments in EL</h4><br/>
 	This is a string from EL Expression: ${"Hello, from EL Expression"}
-	<br /> We can assign a value to variable in EL and the variable value is printed after assignment: ${x = 5}
-	<br /> 
+	<br/> We can assign a value to variable in EL and the variable value is printed after assignment: ${x = 5}
+	<br/> 
 	<h4>eq and == in EL</h4><br/>
 	In EL eq is same as == which will compare string values(<i><b>NOT REFERENCES</b></i>) :${"eq is same as == in EL" eq "eq is same as == in EL"}<br>
 	In EL expression, you need to use += to concate two string: ${"these are two String" += "concated by +=" } <br/>
@@ -49,7 +49,7 @@
 	<h4>Different ways of accessing properties from EL : </h4><br/>
 	<i>Note: We cannot access the public fields directly from EL. We should have getters and setters</i><br/>
 	<% StaticFieldsAndMethodsForELTest test = new StaticFieldsAndMethodsForELTest(); %>
-	Accessing properties using test["accessProperties From EL"]: ${StaticFieldsAndMethodsForELTest()["accessPropertiesFromEL"]}<br/>
+	Accessing properties using test["accessProperties From EL"]: ${x=StaticFieldsAndMethodsForELTest(); x["accessPropertiesFromEL"]}<br/>StaticFieldsAndMethodsForELTest()["accessPropertiesFromEL"]
 	Accessing properties using test.getAccessProperties From EL: ${StaticFieldsAndMethodsForELTest().getAccessPropertiesFromEL()}<br/>
 	You can have mutiple statements in the EL expression separated by ;, all the statements will be evaluated but only the last statement will be ouputed.
 	For Ex in the expression &#36;{test=StaticFieldsAndMethodsForELTest(); test["accessPropertiesFromEL"]}, new object is created and the property is accessed in that object: ${test=StaticFieldsAndMethodsForELTest(); test["accessPropertiesFromEL"]="32972"; test["accessPropertiesFromEL"]}

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+   "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+   "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+
+   <package name="helloworld" namespace="/strutsTutorial" extends="struts-default">
+   	
+   		<interceptors>
+   			<interceptor name="" class=""></interceptor>
+   			<interceptor-stack name="">
+   				<interceptor-ref name=""></interceptor-ref>
+   			</interceptor-stack>
+   		</interceptors>
+   	
+      <action name="welcomeUser" 
+            class="com.java.training.apache.struts2.HelloAction"  method="welcomeUser">
+            <result name="success">/WEB-INF/HelloWorld.jsp</result>
+            <result name="failed">/WEB-INF/error.jsp</result>
+            <result name="input">/WEB-INF/HelloWorld.jsp</result>
+		<interceptor-ref name=""></interceptor-ref>
+      </action>
+     
+     <action name="getHello">
+     	<result name="success">/WEB-INF/HelloWorld.jsp</result>
+     </action>
+     
+     <action name="register">
+     	<result name="success">/WEB-INF/register.jsp</result>
+     </action>
+     
+     <action name="registerUser" class="registerAction" method="register">
+     	<result name="success">/WEB-INF/HelloWorld.jsp</result>
+     	 <result name="input">/WEB-INF/register.jsp</result>
+     </action>
+     
+   </package>
+   
+</struts>

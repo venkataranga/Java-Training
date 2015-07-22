@@ -24,11 +24,11 @@
 	<c:out value="${header['ACCEPT'] }"></c:out><br>
 	<a href='<c:url value="el" var="elUrl" scope="session">
 		<c:param name="requestParam" value="dinesh"></c:param>
-		
+	
 	</c:url>'>Click Here </a><br>
+		
 	
-	
-	<c:if test="${empty param['dinesh'] }" var="someTestCondition" > 
+	<c:if test="${empty param['dinesh'] }" var="someTestCondition"  > 
 		${"Paramter dinesh is not available " }<br>
 	</c:if>
 
@@ -55,18 +55,16 @@
 		iteration number: ${i} <br/>
 	</c:forEach>
 	
-	<c:forEach items="${books}" var="i">
+	<c:forEach items="${books}" var="i"> 
 		index: ${i.getTitle() }<br>
 	</c:forEach>
+	
 	<c:forTokens items="${'dinesh,venkat,harsha' }" delims="," var="string">
 		${string }<br>
 	</c:forTokens>
 	
 	<c:set var="sampleVar" value="Value for the sample variable set using c:set" scope="request"></c:set>
-	
-	${sampleVar}
-	
-	
+	<c:remove var=""/>	
 	
 </body>
 </html>
